@@ -34,5 +34,14 @@ larger = cv2.pyrUp(image)
 cv2.imshow('Smaller Image' , smaller)
 cv2.imshow('Larger Image' , larger)
 
+"""Cropping the Image """
+
+start_row , start_col = int(height * 0.15) , int(width * 0.15)
+end_row , end_col = int(height * 0.75) , int(width * 0.75)
+
+cropped_image = image[start_row:end_row , start_col:end_col]
+
+cv2.imshow("Cropped Image" , cropped_image)
+
 cv2.waitKey()
 cv2.destroyAllWindows()
