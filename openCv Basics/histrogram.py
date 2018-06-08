@@ -11,7 +11,6 @@ from IPython import get_ipython # the plot is shown as a seperate screen
 get_ipython().run_line_magic('matplotlib', 'qt')
 
 image = cv2.imread(r'E:\Programming!\Image processing\images\1.jpg')
-print(image)
 
 color = ('b','g','r')
 
