@@ -11,7 +11,9 @@ import matplotlib.pyplot as plt
 import os
 import time
 
-image =cv2.imread(r"E:\Programming!\Image processing\images\8.jpg",0)
+image =cv2.imread(r"E:\Programming!\Image processing\images\8.jpg")
+
+image = cv2.fastNlMeansDenoisingColored( image , None , 10,10,7,21)
 
 ret , threshold =cv2.threshold(image , 127 ,255 , 0)
 
@@ -20,7 +22,7 @@ alteredImage, contours, hierarchy = cv2.findContours(threshold,cv2.RETR_TREE,cv2
 cv2.imshow("Original Image" , image)
 path = r"E:/Programming!/Image processing/images/Blades Images/"
 
-image2 = cv2.drawContours(image , contours , 1 , (0,255,0), 6)
+image2 = cv2.drawContours(image , contours , -1 , (0,255,0), 6)
 #cv2.imwrite(os.path.join(path+'Blade '+str(i)+".jpg"),image2)
 
 cv2.imshow("Altered Image" , image2)
