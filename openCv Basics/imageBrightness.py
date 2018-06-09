@@ -10,15 +10,15 @@ import matplotlib.pyplot as plt
 
 image = cv2.imread(r'E:\Programming!\Image processing\images\2.jpg')
 
-brightnessMatrix = np.ones(image.shape , dtype = "uint8" ) * 75
+brightnessMatrix = np.ones(image.shape , dtype = "uint8" ) * 100
 
 """To increase the brightness add the brightness matrix"""
 alteredImage = cv2.add(image , brightnessMatrix)
-cv2.imshow("Image Brighteness adjusted" , alteredImage)
+cv2.imshow("Image Brighteness increased" , alteredImage)
 
 """To decrease the brightness subtract the brightness matrix"""
 alteredImage = cv2.subtract(image , brightnessMatrix)
-cv2.imshow("Image Brighteness adjusted" , alteredImage)
+cv2.imshow("Image Brighteness decreased" , alteredImage)
 
 cv2.waitKey()
 cv2.destroyAllWindows()
