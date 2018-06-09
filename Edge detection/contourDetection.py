@@ -15,6 +15,8 @@ image =cv2.imread(r"E:\Programming!\Image processing\images\8.jpg")
 
 image = cv2.fastNlMeansDenoisingColored( image , None , 10,10,7,21)
 
+image = cv2.cvtColor(image , cv2.COLOR_BGR2GRAY)
+
 ret , threshold =cv2.threshold(image , 127 ,255 , 0)
 
 alteredImage, contours, hierarchy = cv2.findContours(threshold,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
